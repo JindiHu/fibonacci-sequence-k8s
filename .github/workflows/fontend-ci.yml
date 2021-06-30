@@ -3,7 +3,7 @@ on:
   push: 
     paths: 
       - 'client/**'
-      - '.github/workflow'
+      - '.github/workflow/**'
   pull_request:
     brnaches:
       - main
