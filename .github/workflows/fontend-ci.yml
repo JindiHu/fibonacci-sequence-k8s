@@ -3,6 +3,10 @@ on:
   push: 
     paths: 
       - 'client/**'
+      - './'
+  pull_request:
+    brnaches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
