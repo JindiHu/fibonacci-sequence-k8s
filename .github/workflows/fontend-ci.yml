@@ -1,5 +1,8 @@
-name: build
-on: [push]
+name: build-frontend
+on:
+  push: 
+    paths: 
+      - 'client/**'
 jobs:
   build:
     runs-on: ubuntu-latest
