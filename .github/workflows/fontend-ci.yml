@@ -4,9 +4,6 @@ on:
     paths: 
       - 'client/**'
       - '.github/workflow/**'
-  pull_request:
-    brnaches:
-      - main
 jobs:
   build:
     runs-on: ubuntu-latest
