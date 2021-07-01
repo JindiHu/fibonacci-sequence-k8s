@@ -1,13 +1,5 @@
 name: frontend unit test
-on:
-  push: 
-    paths-ignore: 
-      - 'server/**'
-      - 'worker/**'
-  pull_request: 
-    paths-ognore:
-      - 'server/**'
-      - 'worker/**'
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
