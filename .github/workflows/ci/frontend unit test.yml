@@ -1,9 +1,9 @@
 name: frontend unit test
 on:
   push: 
-    paths: 
-      - 'client/**'
-      - '.github/workflows/**'
+    paths-ignore: 
+      - 'server/**'
+      - 'worker/**'
 jobs:
   build:
     runs-on: ubuntu-latest
