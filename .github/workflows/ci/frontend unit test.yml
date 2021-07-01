@@ -3,7 +3,7 @@ on:
   push: 
     paths: 
       - 'client/**'
-      - '.github/workflow/**'
+      - '.github/workflows/**'
 jobs:
   build:
     runs-on: ubuntu-latest
