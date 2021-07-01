@@ -7,7 +7,7 @@ function App() {
 		<Router>
 			<div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 				<div style={{ margin: "30px 0px" }}>
-					<Link to="/">Home version 2</Link> | <Link to="other-page">Ohter Page</Link>
+					<Link to="/">Home version 3</Link> | <Link to="other-page">Ohter Page</Link>
 				</div>
 				<Route exact path="/" component={Fib} />
 				<Route path="/other-page" component={OtherPage} />

@@ -1,5 +1,13 @@
-name: GitHub Actions Demo
-on: [push]
+name: frontend unit test
+on:
+  push: 
+    paths-ignore: 
+      - 'server/**'
+      - 'worker/**'
+  pull_request: 
+    paths-ognore:
+      - 'server/**'
+      - 'worker/**'
 jobs:
   build:
     runs-on: ubuntu-latest
