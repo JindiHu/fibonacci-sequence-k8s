@@ -46,4 +46,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           image: hujindi1212/fib-seq-client-dev:latest
-          run: yarn test --coverage
+          run: |
+            export CI=true
+            yarn test --coverage
