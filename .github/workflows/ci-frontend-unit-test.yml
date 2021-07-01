@@ -11,7 +11,7 @@ on:
     inputs:
       newUnityVersion:
         description: 'The new version number string to generate the license activation file for.'
-        required: true
+        required: false
 
 jobs:
   frontend_build:
