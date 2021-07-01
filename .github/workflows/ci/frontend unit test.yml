@@ -1,4 +1,4 @@
-name: frontend unit test
+name: frontend-unit-test
 on: [push]
 jobs:
   build:
