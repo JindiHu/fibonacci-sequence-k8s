@@ -40,4 +40,5 @@ jobs:
         with: 
           image: hujindi1212/fib-seq-client-unit-test:latest
           shell: bash
-            run: docker run -e CI=true fib-seq/client-test yarn test --coverage
+            run: |
+              docker run -e CI=true fib-seq/client-test yarn test --coverage
