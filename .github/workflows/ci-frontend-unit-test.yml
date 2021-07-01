@@ -12,4 +12,4 @@ jobs:
   frontend-build:
     runs-on: ubuntu-latest
     steps:
-      - run: docker build -t hujindi1212/fib-seq-client ./client
+      - run: docker build -t hujindi1212/fib-seq-client client/
