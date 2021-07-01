@@ -31,12 +31,12 @@ jobs:
         with:
           context: client
           push: false
-          tags: hujindi1212/fib-seq-client-unit-test:latest
+          tags: fib-seq-client-unit-test:latest
           file: client/Dockerfile.dev
       # - name: image digest
       #   run: echo ${{ steps.docker_build.outputs.digest }}
       - name: unit test
         uses: addnab/docker-run-action@v3
         with: 
-          image: hujindi1212/fib-seq-client-unit-test:latest
+          image: fib-seq-client-unit-test:latest
           run: docker run -e CI=true fib-seq/client-test yarn test --coverage
