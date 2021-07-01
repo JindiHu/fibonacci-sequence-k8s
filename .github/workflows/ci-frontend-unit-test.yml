@@ -1,7 +1,7 @@
-name: GitHub Actions Demo
+name: frontend unit test
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  frontend-build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
