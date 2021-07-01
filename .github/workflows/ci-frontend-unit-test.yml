@@ -46,5 +46,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           image: hujindi1212/fib-seq-client-dev:latest
-          shell: sh
-            run: docker run -e CI=true fib-seq/client-test yarn test --coverage
+          run: yarn test --coverage
