@@ -4,6 +4,10 @@ on:
     paths-ignore: 
       - 'server/**'
       - 'worker/**'
+  pull_request: 
+    paths-ognore:
+      - 'server/**'
+      - 'worker/**'
 jobs:
   build:
     runs-on: ubuntu-latest
