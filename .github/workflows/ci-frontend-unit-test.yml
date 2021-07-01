@@ -36,5 +36,3 @@ jobs:
           push: false
           tags: hujindi1212/fib-test:latest
           file: client/Dockerfile.dev
-      - name: Coverage test
-        run: docker run -e CI=true fib-seq/client-test yarn test --coverage
