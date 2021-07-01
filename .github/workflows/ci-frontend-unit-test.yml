@@ -10,9 +10,8 @@ on:
   workflow_dispatch:
     inputs:
       newUnityVersion:
-        description: 'The new version number string to generate the license activation file for.'
+        description: 'The new version number string.'
         required: false
-
 jobs:
   frontend_build:
     name: Frontend build
@@ -27,12 +26,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Build and push
+      - name: Build and Run unit test
         uses: docker/build-push-action@v2
         with:
           context: client
-          push: true
-          tags: hujindi1212/fib-seq-client-dev:latest
-          file: client/Dockerfile.dev
+          push: false
+          tags: hujindi1212/fib-seq-client-unit-test:latest
+          file: client/Dockerfile.unit_test
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
