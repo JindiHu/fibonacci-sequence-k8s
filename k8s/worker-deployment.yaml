@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: worker-deployment
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      componenet: worker
+  template: 
+    metadata: 
+      labels: 
+        componenet: worker
+    spec: 
+      containers: 
+        - name: worker
+          image: hujindi1212/fib-seq-worker
+          env:
+            - name: REDIS_HOST
+              value: redis-cluster-ip-service
+            - name: REDIS_PORT
+              value: "6379"
+
+          
