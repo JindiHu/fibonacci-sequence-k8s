@@ -1,15 +1,15 @@
-name: server ci
+name: worker
 on:
   push: 
     paths: 
-      - "server/**"
-      - ".github/workflows/ci-server.yml"
+      - "worker/**"
+      - ".github/workflows/worker.yml"
   pull_request:
     branches:
       - main
 jobs:
   server_prod_build:
-    name: server production build
+    name: worker production build
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -24,9 +24,9 @@ jobs:
       - name: build
         uses: docker/build-push-action@v2
         with:
-          context: server
+          context: worker
           push: true
-          tags: hujindi1212/fib-seq-server:latest
-          file: server/Dockerfile
+          tags: hujindi1212/fib-seq-worker:latest
+          file: worker/Dockerfile
       - name: image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
