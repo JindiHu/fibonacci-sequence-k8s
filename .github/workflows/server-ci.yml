@@ -1,9 +1,9 @@
-name: server
+name: server-ci
 on:
   push: 
     paths: 
       - "server/**"
-      - ".github/workflows/server.yml"
+      - ".github/workflows/server-ci.yml"
   pull_request:
     branches:
       - main
