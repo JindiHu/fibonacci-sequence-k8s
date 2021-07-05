@@ -32,7 +32,7 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
   frontend_unit_test:
     name: frontend unit test
-    needs: frontend_build
+    needs: frontend_dev_build
     runs-on: ubuntu-latest
     steps:
       - name: unit test
@@ -46,6 +46,7 @@ jobs:
             yarn test --coverage
   server_prod_build:
     name: frontend production build
+    needs: frontend_unit_test
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
