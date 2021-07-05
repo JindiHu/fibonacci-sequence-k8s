@@ -3,7 +3,7 @@ on:
   push: 
     paths: 
       - "worker/**"
-      - ".github/workflows/*"
+      - ".github/workflows/ci-worker.yml"
   pull_request:
     branches:
       - main

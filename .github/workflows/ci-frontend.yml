@@ -3,7 +3,7 @@ on:
   push: 
     paths: 
       - "client/**"
-      - ".github/workflows/*"
+      - ".github/workflows/ci-frontend.yml"
   pull_request:
     branches:
       - main
