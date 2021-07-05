@@ -1,4 +1,4 @@
-name: frontend unit test
+name: frontend ci
 on:
   push: 
     paths: 
@@ -7,14 +7,9 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      newUnityVersion:
-        description: 'The new version number string.'
-        required: false
 jobs:
-  frontend_build:
-    name: frontend build
+  frontend_dev_build:
+    name: frontend dev build
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -49,8 +44,8 @@ jobs:
           run: |
             export CI=true
             yarn test --coverage
-  server_build:
-    name: server build
+  server_prod_build:
+    name: frontend production build
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -67,7 +62,7 @@ jobs:
         with:
           context: client
           push: true
-          tags: hujindi1212/fib-seq-server-dev:latest
+          tags: hujindi1212/fib-seq-client:latest
           file: client/Dockerfile
       - name: image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
