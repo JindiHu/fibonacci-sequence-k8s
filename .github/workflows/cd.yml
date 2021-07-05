@@ -13,3 +13,4 @@ jobs:
           curl https://sdk.cloud.google.com | bash
           source $HOME/google-cloud-sdk/path.bash.inc
           gcloud components update kubectl
+          echo "deployment here"
