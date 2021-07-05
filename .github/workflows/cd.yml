@@ -1,0 +1,15 @@
+name: Deploy to GKE
+
+on:
+  release:
+    types: [created]
+jobs:
+  set_up_gcloud:
+    name: set up gcloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: download gcloud cli
+        run: |
+          curl https://sdk.cloud.google.com | bash
+          source $HOME/google-cloud-sdk/path.bash.inc
+          gcloud components update kubectl
