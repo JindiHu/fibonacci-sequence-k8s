@@ -8,8 +8,8 @@ on:
     branches:
       - main
 jobs:
-  frontend_dev_build:
-    name: frontend dev build
+  frontend_unit_test:
+    name: frontend unit test
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
@@ -33,8 +33,12 @@ jobs:
       - name: build
         run: |-
           docker build \
-          -t hujindi1212/fib-seq-client \
+          -t hujindi1212/fib-seq-test \
+          -f ./client/Dockerfile.dev \
           ./client
+          docker run \
+          -e CI=true \
+          fib-seq/client-test yarn test --coverage
   # frontend_unit_test:
   #   name: frontend unit test
   #   needs: frontend_dev_build
